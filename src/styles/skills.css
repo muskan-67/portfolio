@@ -1,0 +1,121 @@
+/* :root {
+  --primary: #0077b6;
+  --secondary: #00b4d8;
+  --accent: #90e0ef;
+  --bg-light: #caf0f8;
+  --text-dark: #03045e;
+  --text-muted: #6c757d;
+} */
+
+/* Section */
+.skills-section {
+  padding: 90px 0;
+  background: linear-gradient(135deg, #f8fcff, var(--bg-light));
+}
+
+/* Title */
+.skills-title {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 40px;
+  animation: fadeDown 1s ease;
+}
+
+.skills-title::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background: var(--primary);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+
+/* Skill Card */
+.skill-card {
+  background: #ffffff;
+  padding: 20px 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  animation: fadeUp 1s ease;
+  cursor: pointer;
+}
+
+/* Hover Glow */
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 119, 182, 0.35);
+}
+
+/* Logo */
+.skill-logo img {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+  animation: fadeIn 1.2s ease;
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover .skill-logo img {
+  transform: scale(1.15);
+}
+
+/* Layout */
+.skill-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-dark);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.skill-header h5 {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+/* Progress Bar */
+.progress {
+  height: 10px;
+  border-radius: 50px;
+  overflow: hidden;
+  background: #dbeafe;
+}
+
+.progress-bar {
+  background: var(--primary);
+  animation: progressAnimation 2s ease;
+}
+
+/* Bottom Text */
+.skills-bottom-text {
+  text-align: center;
+  color: var(--text-muted);
+  margin-top: 30px;
+  font-size: 1.1rem;
+}
+
+/* Animations */
+@keyframes progressAnimation {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}

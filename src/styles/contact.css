@@ -1,0 +1,123 @@
+/* CONTACT SECTION */
+.contact-section {
+  background: var(--gradient-1);
+  padding: 90px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative floating shapes */
+.contact-section::before,
+.contact-section::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: var(--gradient-2);
+  filter: blur(80px);
+  opacity: 0.35;
+  border-radius: 50%;
+  animation: float 6s infinite ease-in-out;
+}
+
+.contact-section::before {
+  top: -40px;
+  left: -40px;
+}
+
+.contact-section::after {
+  bottom: -40px;
+  right: -40px;
+  animation-delay: 2s;
+}
+
+/* CONTACT FORM CARD */
+.contact-form {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 18px;
+  border: 1.6px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  animation: fadeIn 1s ease forwards;
+  transform: translateY(25px);
+  opacity: 0;
+}
+
+/* Inputs + Textarea */
+.contact-form input,
+.contact-form textarea {
+  border-radius: 12px;
+  border: 2px solid transparent;
+  background: #ffffffcc;
+  transition: all 0.35s ease;
+  padding: 12px 14px;
+  font-size: 16px;
+  color: var(--text-dark);
+}
+
+/* Focus Styles */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary);
+  background: #fff;
+  box-shadow: 0 0 12px rgba(0, 180, 216, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Labels */
+.contact-section h2 {
+  color: var(--text-dark);
+  font-weight: 700;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+/* Button */
+.contact-form button {
+  background: var(--primary);
+  border: none;
+  padding: 12px 22px;
+  font-size: 17px;
+  border-radius: 30px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: var(--secondary);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0, 180, 216, 0.3);
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 22px;
+  }
+
+  .contact-section::before,
+  .contact-section::after {
+    width: 140px;
+    height: 140px;
+    filter: blur(60px);
+  }
+}

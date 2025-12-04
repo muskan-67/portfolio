@@ -1,0 +1,122 @@
+
+
+/* Section */
+.about-section {
+  padding: 100px 0;
+  background: var(--bg-light);
+  /* background-color: red; */
+}
+
+/* Title */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  position: relative;
+  margin-bottom: 40px;
+  animation: fadeDown 1s ease;
+}
+
+.section-title::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background: var(--primary);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+
+/* Card layout */
+.about-card {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+/* Left content */
+.about-content {
+  flex: 2;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  animation: slideLeft 1s ease;
+}
+
+.about-heading {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.about-text {
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.highlight {
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+
+.about-box {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  animation: slideRight 1s ease;
+}
+
+.about-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-box li {
+  margin-bottom: 12px;
+  color: var(--text-dark);
+  font-size: 1rem;
+}
+
+.about-box li span {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Animations */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+
+.about-card > div {
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+
+.about-card > div:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 35px rgb(34, 110, 126);
+
+}
+
+ 

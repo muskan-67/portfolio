@@ -1,0 +1,120 @@
+:root {
+  --primary: #0077b6;
+  --secondary: #00b4d8;
+  --accent: #90e0ef;
+  --bg-light: #caf0f8;
+  --text-dark: #03045e;
+  --text-muted: #6c757d;
+
+  --gradient-1: linear-gradient(135deg, #0077b6, #00b4d8);
+  --gradient-glow: linear-gradient(135deg, #00b4d8, #90e0ef, #0077b6);
+}
+
+/* Section */
+.projects-section {
+  padding: 90px 0;
+  background: linear-gradient(135deg, #f7fcff, #e0f7ff);
+}
+
+/* Title */
+.projects-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 40px;
+  animation: fadeDown 0.8s ease;
+}
+
+.projects-title::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: var(--primary);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+
+/* Project Card */
+.project-card {
+  padding: 25px;
+  border-radius: 18px;
+  border: 2px solid transparent;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(40px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient Border Glow Effect */
+.projects-section .project-card:hover { 
+  transform: translateY(-10px) scale(1) !important; 
+box-shadow: 0 12px 25px rgba(0, 119, 182, 0.35);
+}
+
+
+/* Shine hover effect */
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -40%;
+  width: 200%;
+  height: 250%;
+  background: rgba(255, 255, 255, 0.15);
+  transform: rotate(25deg);
+  transition: 0.5s;
+}
+
+.project-card:hover::before {
+  top: -20%;
+  left: -20%;
+}
+
+/* Icon */
+.project-icon img {
+  width: 70px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  animation: fadeIn 1s ease;
+}
+
+/* Buttons */
+.project-card .btn-primary {
+  background: var(--primary);
+  border: none;
+  padding: 8px 20px;
+  transition: 0.3s ease;
+  border-radius: 30px;
+}
+
+.project-card .btn-primary:hover {
+  background: var(--secondary);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.4);
+}
+
+/* Delay animations */
+.project-card:nth-child(1) { animation-delay: 0.2s; }
+.project-card:nth-child(2) { animation-delay: 0.4s; }
+.project-card:nth-child(3) { animation-delay: 0.6s; }
+
+/* Keyframes */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.7); }
+  to { opacity: 1; transform: scale(1); }
+}
