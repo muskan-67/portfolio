@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, Row, Col, Button, Image } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import { motion } from "framer-motion";
 import myImage from "./assets/image/my1.jpg";
 
 const Hero = () => {
@@ -7,45 +8,57 @@ const Hero = () => {
     <section id="hero" className="hero-section d-flex align-items-center">
       <Container>
         <Row className="align-items-center">
-          
-          {/* LEFT SIDE TEXT */}
+
+          {/* LEFT CONTENT */}
           <Col md={6} className="text-center text-md-start">
-            <h1 className="hero-title">
-              Hi, I’m <span className="highlight">Muskan</span>
-            </h1>
 
-            <h4 className="hero-subtitle">
-              Full Stack Developer | Flutter App Developer | React Developer
-            </h4>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="hero-title">
+                Hi, I'm <span className="highlight">Muskan 👋</span>
+              </h1>
 
-            <p className="hero-description">
-              I create modern web and mobile applications with clean UI,
-              powerful functionality, and seamless user experiences.
-            </p>
+              <h3 className="hero-subtitle">
+                Building Modern Web & Mobile Experiences
+              </h3>
 
-            <div className="d-flex justify-content-center justify-content-md-start gap-3 mt-3">
-              <Button variant="" href="#projects" className="hero-btn view">
-                View My Work
-              </Button>
+              <p className="hero-description">
+                Full Stack Developer specializing in React, Flutter, and modern UI.
+                I craft fast, responsive, and user-friendly applications.
+              </p>
 
-              <Button
-                variant="outline-dark"
-                href="#contact"
-                className="hero-btn"
-              >
-                Contact Me
-              </Button>
-            </div>
+              <div className="d-flex justify-content-center justify-content-md-start gap-3 mt-4">
+                
+                <Button href="#projects" className="hero-btn primary">
+                  🚀 View Projects
+                </Button>
+
+                <Button href="#contact" className="hero-btn outline">
+                  📩 Contact Me
+                </Button>
+
+              </div>
+            </motion.div>
+
           </Col>
 
-          {/* RIGHT SIDE IMAGE */}
-          <Col md={6} className="text-center mt-4 mt-md-0">
-           <img
-  src={myImage}
-  alt="Muskan Developer"
-  className="hero-image img-fluid"
-/>
+          {/* RIGHT IMAGE */}
+          <Col md={6} className="text-center mt-5 mt-md-0">
+
+            <motion.img
+              src={myImage}
+              alt="Muskan Developer"
+              className="hero-image img-fluid"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+            />
+
           </Col>
+
         </Row>
       </Container>
     </section>
