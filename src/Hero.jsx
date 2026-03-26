@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Button, Image } from "react-bootstrap";
-import myImage from "../assets/image/my1.jpg";
+import myImage from "./assets/image/my1.jpg";
 
 const Hero = () => {
   return (
@@ -40,11 +40,10 @@ const Hero = () => {
 
           {/* RIGHT SIDE IMAGE */}
           <Col md={6} className="text-center mt-4 mt-md-0">
-            <Image
+           <img
   src={myImage}
   alt="Muskan Developer"
-  className="hero-image"
-  fluid
+  className="hero-image img-fluid"
 />
           </Col>
         </Row>
