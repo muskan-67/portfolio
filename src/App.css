@@ -208,3 +208,235 @@ h2::after {
   }
 }
 
+/* ================================
+   PROJECTS SECTION ANIMATIONS
+================================ */
+
+.projects-section {
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  position: relative;
+  animation: titleFade 0.8s ease forwards;
+}
+
+.projects-title::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 12px auto 0;
+  border-radius: 10px;
+  background: currentColor;
+  animation: lineGrow 1s ease forwards;
+}
+
+
+/* ================================
+   PROJECT CARD
+================================ */
+
+.project-card {
+  height: 100%;
+  border: none !important;
+  border-radius: 20px !important;
+  padding: 15px;
+  overflow: hidden;
+  position: relative;
+
+  opacity: 0;
+  transform: translateY(40px);
+
+  animation: cardAppear 0.8s ease forwards;
+  animation-delay: var(--delay);
+
+  transition: all 0.4s ease;
+}
+
+
+/* Card Hover */
+
+.project-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Moving Top Border */
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+
+  width: 100%;
+  height: 4px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #0d6efd,
+    transparent
+  );
+
+  transition: left 0.5s ease;
+}
+
+.project-card:hover::before {
+  left: 100%;
+}
+
+
+/* ================================
+   PROJECT ICON
+================================ */
+
+.project-icon {
+  width: 90px;
+  height: 90px;
+
+  margin: 15px auto 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  transition: all 0.4s ease;
+}
+
+.project-icon img {
+  width: 60px;
+  height: 60px;
+
+  object-fit: contain;
+
+  transition: all 0.4s ease;
+}
+
+
+/* Icon Hover */
+
+.project-card:hover .project-icon {
+  transform: rotate(8deg) scale(1.1);
+}
+
+.project-card:hover .project-icon img {
+  transform: scale(1.15);
+}
+
+
+/* ================================
+   PROJECT TITLE
+================================ */
+
+.project-card .card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+
+  margin-top: 10px;
+
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .card-title {
+  color: #0d6efd;
+}
+
+
+/* ================================
+   PROJECT DESCRIPTION
+================================ */
+
+.project-card .card-text {
+  line-height: 1.7;
+  margin: 15px 0 20px;
+}
+
+
+/* ================================
+   VIEW PROJECT BUTTON
+================================ */
+
+.project-card .btn {
+  border-radius: 25px;
+
+  padding: 9px 22px;
+
+  transition: all 0.3s ease;
+}
+
+.project-card .btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 18px rgba(13, 110, 253, 0.3);
+}
+
+
+/* ================================
+   ANIMATIONS
+================================ */
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes titleFade {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes lineGrow {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 70px;
+  }
+}
+
+
+/* ================================
+   MOBILE RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+
+  .projects-section {
+    padding: 60px 15px;
+  }
+
+  .projects-title {
+    font-size: 2rem;
+  }
+
+  .project-card {
+    margin-bottom: 20px;
+  }
+}
