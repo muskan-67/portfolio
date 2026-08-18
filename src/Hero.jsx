@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { motion } from "framer-motion";
-import myImage from "./assets/image/my1.jpg";
+import myImage from "./assets/image/pink.jpeg";
 
 const Hero = () => {
   return (
