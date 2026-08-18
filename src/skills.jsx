@@ -43,11 +43,7 @@ const Skills = () => {
       level: 70,
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
     },
-    {
-      name: "Java",
-      level: 70,
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-    },
+    
     {
       name: "Python",
       level: 60,

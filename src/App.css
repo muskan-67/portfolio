@@ -41,6 +41,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -113,8 +114,7 @@ h2 {
 
   color: var(--text-dark);
 
-  animation:
-    fadeInUp 1s ease;
+  animation: fadeInUp 1s ease;
 }
 
 h2::after {
@@ -178,7 +178,9 @@ h2::after {
 }
 
 
-/* Logo */
+/* =========================================
+   LOGO
+========================================= */
 
 .logo-text {
   font-size:
@@ -202,7 +204,9 @@ h2::after {
 }
 
 
-/* Nav links */
+/* =========================================
+   NAV LINKS
+========================================= */
 
 .nav-links .nav-link {
   font-weight:
@@ -296,7 +300,9 @@ h2::after {
 }
 
 
-/* Hero title */
+/* =========================================
+   HERO TITLE
+========================================= */
 
 .hero-title {
   font-size:
@@ -304,6 +310,9 @@ h2::after {
 
   font-weight:
     700;
+
+  line-height:
+    1.2;
 
   animation:
     fadeInUp 0.8s ease;
@@ -333,6 +342,9 @@ h2::after {
 
   color:
     #c4bfdc;
+
+  line-height:
+    1.4;
 }
 
 
@@ -372,6 +384,8 @@ h2::after {
 }
 
 
+/* Primary */
+
 .hero-btn.primary {
   background:
     var(--gradient-1);
@@ -396,6 +410,8 @@ h2::after {
     rgba(124, 58, 237, 0.5);
 }
 
+
+/* Outline */
 
 .hero-btn.outline {
   border:
@@ -426,57 +442,61 @@ h2::after {
 ========================================= */
 
 .hero-image {
-  width: 340px;
-  height: 340px;
+  width:
+    340px;
 
-  object-fit: cover;
+  height:
+    340px;
 
-  border-radius: 50%;
+  object-fit:
+    cover;
 
-  border: 5px solid transparent;
+  border-radius:
+    50%;
+
+  border:
+    5px solid transparent;
 
   background:
-    linear-gradient(#080812, #080812) padding-box,
+    linear-gradient(
+      #080812,
+      #080812
+    ) padding-box,
     var(--gradient-2) border-box;
 
   box-shadow:
-    0 0 25px rgba(139, 92, 246, 0.35),
-    0 0 60px rgba(124, 58, 237, 0.20);
+    0 0 25px
+    rgba(139, 92, 246, 0.35),
 
-  transition: all 0.4s ease;
+    0 0 60px
+    rgba(124, 58, 237, 0.20);
+
+  transition:
+    all 0.4s ease;
 }
 
 
-/* Hover */
+/* Image Hover */
 
 .hero-image:hover {
-  transform: scale(1.03);
+  transform:
+    scale(1.03);
 
   box-shadow:
-    0 0 30px rgba(167, 139, 250, 0.5),
-    0 0 80px rgba(124, 58, 237, 0.3);
+    0 0 30px
+    rgba(167, 139, 250, 0.5),
+
+    0 0 80px
+    rgba(124, 58, 237, 0.3);
 }
 
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 768px) {
-
-  .hero-image {
-    width: 250px;
-    height: 250px;
-
-    border-width: 4px;
-  }
-}
 
 /* =========================================
    GLOBAL ANIMATIONS
 ========================================= */
 
 @keyframes slideDown {
+
   from {
     transform:
       translateY(-20px);
@@ -496,6 +516,7 @@ h2::after {
 
 
 @keyframes fadeInUp {
+
   from {
     opacity:
       0;
@@ -514,45 +535,121 @@ h2::after {
 }
 
 
-@keyframes floatImage {
-  0% {
-    transform:
-      translateY(0);
-  }
-
-  50% {
-    transform:
-      translateY(-12px);
-  }
-
-  100% {
-    transform:
-      translateY(0);
-  }
-}
-
-
 /* =========================================
-   MOBILE
+   MOBILE RESPONSIVE
 ========================================= */
 
 @media (max-width: 768px) {
 
+  /* Fix navbar overlapping hero */
+  .hero-section {
+    min-height:
+      100vh;
+
+    padding-top:
+      90px;
+
+    padding-bottom:
+      50px;
+  }
+
+
+  /* Hero title */
+
   .hero-title {
     font-size:
       2.3rem;
+
+    line-height:
+      1.25;
   }
+
+
+  /* Subtitle */
 
   .hero-subtitle {
     font-size:
       1.2rem;
-  }
-
-  .hero-image {
-    max-width:
-      260px;
 
     margin-top:
+      12px;
+  }
+
+
+  /* Description */
+
+  .hero-description {
+    font-size:
+      0.95rem;
+
+    padding:
+      0 10px;
+
+    line-height:
+      1.7;
+  }
+
+
+  /* Buttons */
+
+  .hero-btn {
+    padding:
+      9px 18px;
+
+    font-size:
+      14px;
+  }
+
+
+  /* Profile Image */
+
+  .hero-image {
+    width:
+      250px;
+
+    height:
+      250px;
+
+    max-width:
+      250px;
+
+    margin-top:
+      35px;
+
+    border-width:
+      4px;
+  }
+
+
+  /* Mobile navbar */
+
+  .portfolio-navbar {
+    padding:
+      10px 0;
+  }
+
+
+  .logo-text {
+    font-size:
       25px;
+  }
+
+
+  /* Nav links */
+
+  .nav-links .nav-link {
+    padding:
+      10px 0;
+
+    text-align:
+      center;
+  }
+
+
+  /* Remove underline positioning issue on mobile */
+
+  .nav-links .nav-link::after {
+    display:
+      none;
   }
 }
