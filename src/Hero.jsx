@@ -12,6 +12,7 @@ const Hero = () => {
           {/* LEFT CONTENT */}
           <Col md={6} className="text-center text-md-start">
 
+            {/* Text animation - SAME */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -31,7 +32,7 @@ const Hero = () => {
               </p>
 
               <div className="d-flex justify-content-center justify-content-md-start gap-3 mt-4">
-                
+
                 <Button href="#projects" className="hero-btn primary">
                   🚀 View Projects
                 </Button>
@@ -48,13 +49,11 @@ const Hero = () => {
           {/* RIGHT IMAGE */}
           <Col md={6} className="text-center mt-5 mt-md-0">
 
-            <motion.img
+            {/* No animation on image */}
+            <img
               src={myImage}
               alt="Muskan Developer"
               className="hero-image img-fluid"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
             />
 
           </Col>
