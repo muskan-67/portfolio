@@ -81,7 +81,7 @@ const Skills = () => {
 
         <p className="skills-bottom-text">
           Continuously learning & improving — always excited for new
-          technologies 🚀
+          technologies 
         </p>
       </div>
     </section>
